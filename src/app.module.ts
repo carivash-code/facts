@@ -1,17 +1,19 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { FactsModule } from './facts/facts.module';
 import { TypeOrmModule } from "@nestjs/typeorm";
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     FactsModule,
     TypeOrmModule.forRoot({
       type: "mysql",
-      host: "monorail.proxy.rlwy.net",
-      port: 3307,
-      username: "user_crud",
-      password: "root",
-      database: "db_crud",
+      host: "viaduct.proxy.rlwy.net",
+      port: 54302,
+      username: process.env.MYSQL_USER,
+      password: process.env.MYSQL_PASSWORD,
+      database: process.env.MYSQL_DATABASE,
       autoLoadEntities: true,
       synchronize: true,
     }),
