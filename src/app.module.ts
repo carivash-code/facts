@@ -7,7 +7,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
     FactsModule,
     TypeOrmModule.forRoot({
       type: "mysql",
-      host: "localhost",
+      host: "monorail.proxy.rlwy.net",
       port: 3307,
       username: "user_crud",
       password: "root",
