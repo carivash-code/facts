@@ -12,7 +12,7 @@ export class Fact {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({type: "longtext"})
+  @Column({type: "text"})
   text: string;
 
   @CreateDateColumn({ type: "timestamp", default: () => "CURRENT_TIMESTAMP(6)" })
